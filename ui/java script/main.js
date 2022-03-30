@@ -13,7 +13,7 @@ const showMenu = (toggleId, navId) => {
 showMenu('nav-toggle', 'nav-menu')
 
 /*==================== pindah ke tampilan mobile ====================*/
-const navLink = document.querySelectorAll('.nav__link')
+const navLink = document.querySelectorAll('.nav-link')
 
 function linkAction() {
     const navMenu = document.getElementById('nav-menu')
@@ -32,9 +32,9 @@ function scrollActive() {
         sectionId = current.getAttribute('id')
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+            document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active-link')
         } else {
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+            document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link')
         }
     })
 }
@@ -80,7 +80,7 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
-/*==================== animasi scroll ====================*/
+/*==================== animasi scrolling ====================*/
 const sr = ScrollReveal({
     origin: 'top',
     distance: '30px',
@@ -88,11 +88,10 @@ const sr = ScrollReveal({
     reset: true
 });
 
-sr.reveal(`.home__data, .home__img,
-            .about__data, .about__img,
-            .services__content, .menu__content,
-            .app__data, .app__img,
-            .contact__data, .contact__button,
-            .footer__content`, {
+sr.reveal(`.home-data, .home-img,
+            .about-data, .about-img,
+            .services-content, .menu-content,
+            .contact-data, .contact-button,
+            .footer-content`, {
     interval: 200
 })
